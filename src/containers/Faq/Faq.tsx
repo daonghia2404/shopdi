@@ -35,7 +35,7 @@ const Faq: React.FC<TFaqProps> = () => {
     <section className="Faq" id="Faq">
       <div className="container">
         <div className="Faq-wrapper">
-          <Row align="middle" gutter={[100, 48]}>
+          <Row align="middle" gutter={[100, 64]}>
             <Col span={24} lg={{ span: 12 }}>
               <h3 className="Faq-subtitle">Q&A</h3>
               <h2 className="Faq-title">Câu hỏi thường gặp</h2>

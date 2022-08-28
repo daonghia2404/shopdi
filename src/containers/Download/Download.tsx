@@ -29,7 +29,7 @@ const Download: React.FC<TDownloadProps> = () => {
               </p>
               <div className="Download-download flex">
                 <a
-                  href="https://play.google.com/store/games?utm_source=apac_med&utm_medium=hasem&utm_content=Jul0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-med-hasem-py-Evergreen-Jul0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700059410214883_creativeid_485682226069_device_c&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2l2F5Hbor5uHbDXRzAW4khNkk5EebHB3lsl8ZdYrwLi9pUiu97ojjhoCP3wQAvD_BwE&gclsrc=aw.ds"
+                  href="https://play.google.com/store/apps/details?id=io.shopdi.app"
                   target="_blank"
                   rel="noreferrer"
                   className="Download-download-item"
@@ -37,7 +37,7 @@ const Download: React.FC<TDownloadProps> = () => {
                   <img src={ImageDownloadGooglePlayDark} alt="" />
                 </a>
                 <a
-                  href="https://play.google.com/store/games?utm_source=apac_med&utm_medium=hasem&utm_content=Jul0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-med-hasem-py-Evergreen-Jul0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700059410214883_creativeid_485682226069_device_c&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2l2F5Hbor5uHbDXRzAW4khNkk5EebHB3lsl8ZdYrwLi9pUiu97ojjhoCP3wQAvD_BwE&gclsrc=aw.ds"
+                  href="https://apps.apple.com/us/app/shopdi/id1625578140"
                   target="_blank"
                   rel="noreferrer"
                   className="Download-download-item"

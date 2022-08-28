@@ -44,7 +44,7 @@ const Register: React.FC<TRegisterProps> = () => {
           </div>
 
           <div className="Register-list">
-            <Row gutter={[48, 84]}>
+            <Row gutter={[48, 128]}>
               {dataRegister.map((item, index) => (
                 <Col key={index} span={24} lg={{ span: 8 }}>
                   <div className="Register-card">

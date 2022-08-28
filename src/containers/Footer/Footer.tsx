@@ -27,21 +27,21 @@ import './Footer.scss';
 
 const Footer: React.FC<TFooterProps> = () => {
   const dataMenuSupport = [
-    { link: '#', title: 'Hotline và chat trực tuyến (24/7)' },
-    { link: '#', title: 'Trung tâm hỗ trợ' },
-    { link: '#', title: 'Gửi yêu cầu hỗ trợ' },
-    { link: '#', title: 'Hỗ trợ khách hàng: support@shopdi.io' },
-    { link: '#', title: 'Hướng dẫn đặt hàng và thanh toán' },
-    { link: '#', title: 'Quy chế hoạt động website' },
-    { link: '#', title: 'Điều khoản sử dụng' },
+    { link: 'tel: 0818442288', title: 'Hotline và chat trực tuyến (24/7)' },
+    { link: 'mailto: support@shopdi.io', title: 'Trung tâm hỗ trợ' },
+    { link: 'mailto: support@shopdi.io', title: 'Gửi yêu cầu hỗ trợ' },
+    { link: 'mailto: support@shopdi.io', title: 'Hỗ trợ khách hàng: support@shopdi.io' },
+    { link: 'https://shopdi.com.vn/huong-dan/', title: 'Hướng dẫn đặt hàng và thanh toán' },
+    { link: 'https://shopdi.com.vn/quy-che-hoat-dong/', title: 'Quy chế hoạt động website' },
+    { link: 'https://shopdi.com.vn/dieu-khoan-dich-vu/', title: 'Điều khoản sử dụng' },
   ];
 
   const dataMenuShopdi = [
-    { link: '#', title: 'Thông tin dự án' },
-    { link: '#', title: 'Chính sách đổi Shopdi Xu' },
-    { link: '#', title: 'Chính sách bảo mật' },
-    { link: '#', title: 'Chính sách quyền riêng tư' },
-    { link: '#', title: 'Chính sách kiểm hàng, đổi trả và hoàn tiền' },
+    { link: 'https://shopdi.com.vn/thong-tin-du-an/', title: 'Thông tin dự án' },
+    { link: 'https://shopdi.com.vn/shopdi-xu/', title: 'Chính sách đổi Shopdi Xu' },
+    { link: 'https://shopdi.com.vn/chinh-sach-bao-mat/', title: 'Chính sách bảo mật' },
+    { link: 'https://shopdi.com.vn/chinh-sach-quyen-rieng-tu/', title: 'Chính sách quyền riêng tư' },
+    { link: 'https://shopdi.com.vn/chinh-sach-doi-tra-hang/', title: 'Chính sách kiểm hàng, đổi trả và hoàn tiền' },
   ];
 
   return (
@@ -98,7 +98,7 @@ const Footer: React.FC<TFooterProps> = () => {
                 <h4 className="Footer-title">TẢI ỨNG DỤNG</h4>
                 <div className="Footer-download flex flex-wrap">
                   <a
-                    href="https://play.google.com/store/games?utm_source=apac_med&utm_medium=hasem&utm_content=Jul0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-med-hasem-py-Evergreen-Jul0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700059410214883_creativeid_485682226069_device_c&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2l2F5Hbor5uHbDXRzAW4khNkk5EebHB3lsl8ZdYrwLi9pUiu97ojjhoCP3wQAvD_BwE&gclsrc=aw.ds"
+                    href="https://apps.apple.com/us/app/shopdi/id1625578140"
                     target="_blank"
                     rel="noreferrer"
                     className="Footer-download-item"
@@ -107,7 +107,7 @@ const Footer: React.FC<TFooterProps> = () => {
                   </a>
 
                   <a
-                    href="https://play.google.com/store/games?utm_source=apac_med&utm_medium=hasem&utm_content=Jul0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-med-hasem-py-Evergreen-Jul0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700059410214883_creativeid_485682226069_device_c&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2l2F5Hbor5uHbDXRzAW4khNkk5EebHB3lsl8ZdYrwLi9pUiu97ojjhoCP3wQAvD_BwE&gclsrc=aw.ds"
+                    href="https://play.google.com/store/apps/details?id=io.shopdi.app"
                     target="_blank"
                     rel="noreferrer"
                     className="Footer-download-item"
@@ -117,22 +117,42 @@ const Footer: React.FC<TFooterProps> = () => {
                 </div>
                 <h4 className="Footer-title">KẾT NỐI VỚI CHÚNG TÔI</h4>
                 <div className="Footer-socials flex flex-wrap">
-                  <a href="https://facebook.com" target="_blank" rel="noreferrer" className="Footer-socials-item">
+                  <a
+                    href="https://www.facebook.com/shopdi.official"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="Footer-socials-item"
+                  >
                     <img src={IconFacebook} alt="" />
                   </a>
-                  <a href="https://youtube.com" target="_blank" rel="noreferrer" className="Footer-socials-item">
+                  <a
+                    href="https://www.youtube.com/channel/UCUEJ-fUE4-ONf-LVdizZSTg"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="Footer-socials-item"
+                  >
                     <img src={IconYoutube} alt="" />
                   </a>
-                  <a href="https://telegram.com" target="_blank" rel="noreferrer" className="Footer-socials-item">
+                  <a
+                    href="https://t.me/ShopdiOfficial"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="Footer-socials-item"
+                  >
                     <img src={IconTelegram} alt="" />
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noreferrer" className="Footer-socials-item">
+                  <a
+                    href="https://twitter.com/shopdi_official"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="Footer-socials-item"
+                  >
                     <img src={IconTwitter} alt="" />
                   </a>
-                  <a href="https://zalo.com" target="_blank" rel="noreferrer" className="Footer-socials-item">
+                  <a href="https://shopdi.com.vn/" target="_blank" rel="noreferrer" className="Footer-socials-item">
                     <img src={IconZalo} alt="" />
                   </a>
-                  <a href="https://medium.com" target="_blank" rel="noreferrer" className="Footer-socials-item">
+                  <a href="https://shopdi.medium.com/" target="_blank" rel="noreferrer" className="Footer-socials-item">
                     <img src={IconMedium} alt="" />
                   </a>
                 </div>

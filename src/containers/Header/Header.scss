@@ -71,7 +71,7 @@
       align-items: flex-start !important;
       padding: 0 1.6rem;
       column-gap: unset;
-      row-gap: 1.6rem;
+      row-gap: calc(3.2rem - .8rem);
       margin-bottom: 6.4rem;
     }
 

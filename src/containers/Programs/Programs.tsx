@@ -105,7 +105,9 @@ const Programs: React.FC<TProgramsProps> = () => {
                   {[1, 2].map((item) => (
                     <Col key={item} span={24} md={{ span: 12 }}>
                       <div className="Programs-news-list-item">
-                        <div className="Programs-news-list-item-image" />
+                        <a href="#" className="Programs-news-list-item-image">
+                          <img src="" alt="" />
+                        </a>
                         <div className="Programs-news-list-item-info">
                           <h4 className="Programs-news-list-item-title">
                             <a href="#">SHOPDI CHÀO BẠN MỚI - TẢI APP NHẬN SHOPDIXU! </a>

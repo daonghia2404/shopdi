@@ -44,15 +44,13 @@
   &-list {
 
     &-item {
-      padding: 9rem 0;
-
       &:nth-child(even) {
         flex-direction: row-reverse;
       }
 
       @media (max-width: 991px) {
         padding: 0;
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse !important;
       }
 
       &-info {

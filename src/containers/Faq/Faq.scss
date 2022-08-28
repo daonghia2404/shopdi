@@ -36,6 +36,10 @@
 
     a {
       color: $candlelight;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -60,6 +64,17 @@
     border-bottom-color: rgba($silver, 0.2);
   }
 
+  .ant-collapse-item {
+    &:hover {
+      .Faq-panel-header {
+        &-title,
+        &-number {
+          color: $candlelight;
+        }
+      }
+    }
+  }
+
   &-panel {
     &-icon {
       width: 2.4rem;
@@ -75,18 +90,20 @@
         font-size: 2.4rem;
         margin-right: 4rem;
         color: $silver;
+        transition: $common-transition;
       }
 
       &-title {
         font-size: 1.8rem;
         color: $white;
         margin-bottom: 0;
+        transition: $common-transition;
       }
     }
 
     &-content {
       font-size: 1, 8rem;
-      color: $silver;
+      color: $white;
     }
   }
 }

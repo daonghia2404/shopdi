@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
@@ -15,6 +15,7 @@ import { TRootState } from '@/redux/reducers';
 
 import { THeaderProps } from './Header.types.d';
 import './Header.scss';
+import { scrollToTop } from '@/utils/functions';
 
 const Header: React.FC<THeaderProps> = () => {
   const isMobile = useSelector((state: TRootState) => state.uiReducer.device.isMobile);
@@ -62,6 +63,15 @@ const Header: React.FC<THeaderProps> = () => {
     },
   ];
 
+  useEffect(() => {
+    if (visibleMenu) {
+      document.body.style.overflow = 'hidden';
+      scrollToTop();
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [visibleMenu]);
+
   const renderContactAndDownloadSection = (): React.ReactElement => {
     return (
       <div className="Header-top-wrapper flex items-center justify-between">
@@ -70,18 +80,10 @@ const Header: React.FC<THeaderProps> = () => {
         </div>
         <div className="Header-top-wrapper-item flex items-center flex items-center">
           Download App
-          <a
-            href="https://play.google.com/store/games?utm_source=apac_med&utm_medium=hasem&utm_content=Jul0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-med-hasem-py-Evergreen-Jul0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700059410214883_creativeid_485682226069_device_c&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2l2F5Hbor5uHbDXRzAW4khNkk5EebHB3lsl8ZdYrwLi9pUiu97ojjhoCP3wQAvD_BwE&gclsrc=aw.ds"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://apps.apple.com/us/app/shopdi/id1625578140" target="_blank" rel="noreferrer">
             <img src={isMobile ? IconAppleDark : IconApple} alt="" />
           </a>
-          <a
-            href="https://play.google.com/store/games?utm_source=apac_med&utm_medium=hasem&utm_content=Jul0121&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-vn-1003227-med-hasem-py-Evergreen-Jul0121-Text_Search_BKWS-BKWS%7CONSEM_kwid_43700059410214883_creativeid_485682226069_device_c&gclid=CjwKCAjwgaeYBhBAEiwAvMgp2l2F5Hbor5uHbDXRzAW4khNkk5EebHB3lsl8ZdYrwLi9pUiu97ojjhoCP3wQAvD_BwE&gclsrc=aw.ds"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://play.google.com/store/apps/details?id=io.shopdi.app" target="_blank" rel="noreferrer">
             <img src={isMobile ? IconAndroidDark : IconAndroid} alt="" />
           </a>
         </div>
