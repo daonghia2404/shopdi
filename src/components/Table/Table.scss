@@ -1,0 +1,42 @@
+@import '../../assets/styles/global';
+
+.Table {
+  .ant-table-thead {
+    .ant-table-cell {
+      background: $candlelight;
+      font-size: 2rem;
+      font-weight: 700;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .ant-table-tbody {
+    .ant-table-row {
+      &:not(:last-child) {
+        .ant-table-cell {
+          border-bottom: 1px solid $ebony-clay;
+        }
+      }
+    }
+
+    .ant-table-cell {
+      font-size: 1.8rem;
+      background: $white;
+      border-bottom: none;
+    }
+  }
+
+  .ant-table-cell {
+    color: $ebony-clay;
+    padding: .8rem 1.6rem;
+    text-align: center;
+    white-space: nowrap;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+}

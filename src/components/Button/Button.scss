@@ -1,0 +1,20 @@
+@import '../../assets/styles/global';
+
+.Button {
+  .ant-btn {
+    background: $candlelight;
+    height: 6rem;
+    padding: 0.4rem 3.2rem;
+    border-radius: .5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $black;
+    border-color: $candlelight;
+
+    @media (max-width: 991px) {
+      height: 5rem;
+      padding: 0.4rem 2.4rem;
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@import '@/assets/styles/_global.scss';
+
+.Header {
+  position: relative;
+
+  &-top {
+    background: $ebony-clay;
+    padding: 1.2rem 0;
+
+
+    &-wrapper {
+      @media (max-width: 991px) {
+        flex-direction: column-reverse;
+        padding: 1.2rem 1.6rem;
+        row-gap: 1.6rem;
+        align-items: unset !important;
+        justify-content: unset !important;
+      }
+
+      &-item {
+        font-size: 1.4rem;
+        color: $white;
+        column-gap: 1.4rem;
+
+        @media (max-width: 991px) {
+          color: $mine-shaft;
+        }
+
+        a {
+          font-weight: 700;
+          color: $white;
+
+          @media (max-width: 991px) {
+            color: $mine-shaft;
+          }
+        }
+
+        img {
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    background: $white;
+    padding: 3.5rem 0;
+
+    @media (max-width: 991px) {
+      padding: 1.6rem 0;
+    }
+  }
+
+  &-logo {
+    display: block;
+    max-width: 12.5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-list {
+    column-gap: 2.8rem;
+    list-style: none;
+    padding: 0;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      align-items: flex-start !important;
+      padding: 0 1.6rem;
+      column-gap: unset;
+      row-gap: 1.6rem;
+      margin-bottom: 6.4rem;
+    }
+
+    &-wrapper {
+      @media (max-width: 991px) {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        z-index: 3;
+        background: $white;
+        overflow: hidden;
+        height: 0;
+        transition: $common-transition;
+
+        &.active {
+          height: calc(100vh - 6.7rem);
+          overflow: auto;
+        }
+      }
+    }
+
+    &-item {
+      @media (max-width: 991px) {
+        width: 100%;
+      }
+
+      a {
+        position: relative;
+        font-size: 1.6rem;
+        color: $ebony-clay;
+
+        @media (max-width: 991px) {
+          padding: .8rem 0;
+          width: 100%;
+          display: block;
+
+          &:hover,
+          &.active {
+            color: $ebony-clay;
+
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+
+          &::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: .4rem;
+            background: $ebony-clay;
+            content: '';
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: $common-transition;
+          }
+        }
+      }
+    }
+  }
+
+  &-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    @include centerOriginImage;
+  }
+}

@@ -1,0 +1,47 @@
+@import '@/assets/styles/_global.scss';
+
+.Introduction {
+  padding: 13rem 0 19rem;
+
+  @media (max-width: 991px) {
+    padding: 6rem 0 2.4rem;
+  }
+
+  &-background {
+    @include fullAbsolute;
+    z-index: 1;
+  }
+
+  &-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-title {
+    font-size: 8rem;
+    font-weight: 700;
+    color: $mine-shaft;
+    margin-top: 0;
+    margin-bottom: 3.2rem;
+
+    @media (max-width: 991px) {
+      font-size: 4rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  p {
+    font-size: 2.4rem;
+    color: $mine-shaft;
+    margin-bottom: 3.2rem;
+
+    @media (max-width: 991px) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &-image {
+    margin: 0 auto;
+    @include centerOriginImage;
+  }
+}
