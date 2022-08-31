@@ -2,6 +2,7 @@
 
 .Download {
   position: relative;
+  overflow: hidden;
 
   &-background {
     @include fullAbsolute;

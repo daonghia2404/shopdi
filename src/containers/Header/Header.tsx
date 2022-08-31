@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from '@reach/router';
+import { Link, useLocation } from '@reach/router';
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
@@ -9,17 +9,18 @@ import IconAppleDark from '@/assets/icons/icon-apple-dark.svg';
 import IconAndroidDark from '@/assets/icons/icon-android-dark.svg';
 import IconMenu from '@/assets/icons/icon-menu.svg';
 import IconX from '@/assets/icons/icon-x.svg';
-import Logo from '@/assets/images/logo.svg';
+import Logo from '@/assets/images/logo.png';
 import { Paths } from '@/pages/routers';
 import { TRootState } from '@/redux/reducers';
 
 import { THeaderProps } from './Header.types.d';
 import './Header.scss';
-import { scrollToTop } from '@/utils/functions';
 
 const Header: React.FC<THeaderProps> = () => {
   const isMobile = useSelector((state: TRootState) => state.uiReducer.device.isMobile);
   const [visibleMenu, setVisibleMenu] = useState<boolean>(false);
+  const location = useLocation();
+  const { hash } = location;
 
   const handleToggleVisibleMenu = (): void => {
     setVisibleMenu(!visibleMenu);
@@ -64,9 +65,26 @@ const Header: React.FC<THeaderProps> = () => {
   ];
 
   useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const sections: any = document.querySelectorAll('section');
+      sections.forEach((item: any, index: number) => {
+        const id = item?.id;
+        const link: any = document.querySelector(`a[href="#${id}"`);
+        if (
+          window.scrollY >= item.offsetTop - 100 &&
+          window.scrollY < (sections[index + 1]?.offsetTop || Number.MAX_SAFE_INTEGER) - 100
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  }, []);
+
+  useEffect(() => {
     if (visibleMenu) {
       document.body.style.overflow = 'hidden';
-      scrollToTop();
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -92,42 +110,48 @@ const Header: React.FC<THeaderProps> = () => {
   };
 
   return (
-    <header className="Header">
+    <>
       {!isMobile && (
         <div className="Header-top">
           <div className="container">{renderContactAndDownloadSection()}</div>
         </div>
       )}
 
-      <div className="Header-bottom">
-        <div className="container">
-          <div className="Header-bottom-wrapper flex items-center justify-between">
-            <Link to={Paths.Home} className="Header-logo">
-              <img src={Logo} alt="Shopdi Logo" />
-            </Link>
-            {isMobile && (
-              <div className="Header-icon" onClick={handleToggleVisibleMenu}>
-                <img src={visibleMenu ? IconX : IconMenu} alt="" />
-              </div>
-            )}
-            <nav className={classNames('Header-list-wrapper', { active: visibleMenu })}>
-              <ul className="Header-list flex items-center">
-                {dataMenu.map((item, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <li key={index} className="Header-list-item">
-                    <a href={item.link} onClick={handleToggleVisibleMenu}>
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+      <header className="Header">
+        <div className="Header-bottom">
+          <div className="container">
+            <div className="Header-bottom-wrapper flex items-center justify-between">
+              <Link to={Paths.Home} className="Header-logo">
+                <img src={Logo} alt="Shopdi Logo" />
+              </Link>
+              {isMobile && (
+                <div className="Header-icon" onClick={handleToggleVisibleMenu}>
+                  <img src={visibleMenu ? IconX : IconMenu} alt="" />
+                </div>
+              )}
+              <nav className={classNames('Header-list-wrapper', { active: visibleMenu })}>
+                <ul className="Header-list flex items-center">
+                  {dataMenu.map((item, index) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <li key={index} className="Header-list-item">
+                      <a
+                        className={classNames({ active: hash === item.link })}
+                        href={item.link}
+                        onClick={(): void => setVisibleMenu(false)}
+                      >
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
 
-              {isMobile && renderContactAndDownloadSection()}
-            </nav>
+                {isMobile && renderContactAndDownloadSection()}
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

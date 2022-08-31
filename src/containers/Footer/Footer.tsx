@@ -4,7 +4,7 @@ import { Col, Collapse, Row } from 'antd';
 import { Link } from '@reach/router';
 import { useSelector } from 'react-redux';
 
-import LogoLight from '@/assets/images/logo-light.svg';
+import LogoLight from '@/assets/images/logo-light.png';
 import ImageBct from '@/assets/images/image-bct.svg';
 import ImageDownloadAppStore from '@/assets/images/image-download-app-store.svg';
 import ImageDownloadGooglePlay from '@/assets/images/image-download-google-play.svg';

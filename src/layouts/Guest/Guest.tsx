@@ -15,9 +15,7 @@ const Guest: React.FC<TGuestProps> = ({ children }) => {
 
   return (
     <div className="Guest">
-      <div className="Guest-header">
-        <Header />
-      </div>
+      <Header />
       <div className="Guest-body">{children}</div>
       <div className="Guest-footer">
         <Footer />
