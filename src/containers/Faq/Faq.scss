@@ -65,11 +65,20 @@
   }
 
   .ant-collapse-item {
+    &.ant-collapse-item-active,
     &:hover {
-      .Faq-panel-header {
-        &-title,
-        &-number {
-          color: $candlelight;
+      .Faq-panel {
+        &-header {
+          &-title,
+          &-number {
+            color: $candlelight;
+          }
+        }
+
+        &-icon {
+          svg path {
+            stroke: $candlelight;
+          }
         }
       }
     }
@@ -77,9 +86,14 @@
 
   &-panel {
     &-icon {
-      width: 2.4rem;
-      height: 2.4rem;
-      @include centerOriginImage;
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        path {
+          transition: $common-transition;
+        }
+      }
     }
 
     &-header {

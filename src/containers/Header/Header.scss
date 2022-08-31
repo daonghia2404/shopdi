@@ -2,11 +2,11 @@
 
 .Header {
   position: relative;
+  z-index: 4;
 
   &-top {
     background: $ebony-clay;
     padding: 1.2rem 0;
-
 
     &-wrapper {
       @media (max-width: 991px) {
@@ -30,6 +30,12 @@
           font-weight: 700;
           color: $white;
 
+          &:hover {
+            img {
+              opacity: 1;
+            }
+          }
+
           @media (max-width: 991px) {
             color: $mine-shaft;
           }
@@ -38,13 +44,14 @@
         img {
           width: 1.6rem;
           height: 1.6rem;
+          @include hoverOpacity;
         }
       }
     }
   }
 
   &-bottom {
-    background: $white;
+    background: transparent;
     padding: 3.5rem 0;
 
     @media (max-width: 991px) {

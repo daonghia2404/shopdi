@@ -55,6 +55,7 @@
     a {
       display: block;
       max-width: 10rem;
+      @include hoverOpacity;
 
       img {
         width: 100%;
@@ -71,6 +72,7 @@
       max-width: 3.2rem;
       flex: 0 0 3.2rem;
       height: 3.2rem;
+      @include hoverOpacity;
 
       img {
         width: 100%;
@@ -88,6 +90,7 @@
       max-width: 3.2rem;
       flex: 0 0 3.2rem;
       height: 3.2rem;
+      @include hoverOpacity;
 
       img {
         width: 100%;

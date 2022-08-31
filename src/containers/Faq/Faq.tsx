@@ -3,8 +3,6 @@
 import React from 'react';
 import { Col, Collapse, Row } from 'antd';
 
-import IconPlus from '@/assets/icons/icon-plus.svg';
-
 import { TFaqProps } from './Faq.types.d';
 import './Faq.scss';
 
@@ -48,9 +46,36 @@ const Faq: React.FC<TFaqProps> = () => {
               <Collapse
                 expandIconPosition="right"
                 accordion
-                expandIcon={(): React.ReactElement => (
+                expandIcon={({ isActive }): React.ReactElement => (
                   <div className="Faq-panel-icon">
-                    <img src={IconPlus} alt="" />
+                    {isActive ? (
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M5.6936 12H19.6936"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    ) : (
+                      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M12.6936 5V19"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M5.6936 12H19.6936"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
                   </div>
                 )}
               >

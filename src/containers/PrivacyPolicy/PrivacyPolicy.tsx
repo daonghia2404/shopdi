@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Row } from 'antd';
 
 import Table from '@/components/Table';
+import ImageCircleBackground from '@/assets/images/image-circle-background.png';
 
 import { TPrivacyPolicyProps } from './PrivacyPolicy.types.d';
 import './PrivacyPolicy.scss';
@@ -66,7 +67,9 @@ const PrivacyPolicy: React.FC<TPrivacyPolicyProps> = () => {
 
   return (
     <section className="PrivacyPolicy" id="PrivacyPolicy">
-      <div className="PrivacyPolicy-background" />
+      <div className="PrivacyPolicy-background">
+        <img src={ImageCircleBackground} alt="" />
+      </div>
       <div className="container">
         <div className="PrivacyPolicy-wrapper">
           <div className="PrivacyPolicy-header">

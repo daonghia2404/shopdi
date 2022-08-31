@@ -5,6 +5,17 @@
 
   &-background {
     @include fullAbsolute;
+    z-index: -1;
+    filter: blur(100px);
+
+    img {
+      width: 35vw;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0.3;
+      transform: translateY(50%);
+    }
   }
 
   &-image {
@@ -74,6 +85,7 @@
     &-item {
       display: block;
       max-width: 19.8rem;
+      @include hoverOpacity;
 
       @media (max-width: 575px) {
         max-width: 15.5rem;

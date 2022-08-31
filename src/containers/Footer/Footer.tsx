@@ -53,7 +53,7 @@ const Footer: React.FC<TFooterProps> = () => {
               <div className="Footer-wrapper-item">
                 <Link to={Paths.Home}>
                   <div className="Footer-logo">
-                    <img src={LogoLight} alt="" />
+                    <img src={LogoLight} alt="Shopdi Logo" />
                   </div>
                 </Link>
 
@@ -65,7 +65,7 @@ const Footer: React.FC<TFooterProps> = () => {
                 </p>
 
                 <div className="Footer-bct">
-                  <img src={ImageBct} alt="" />
+                  <img src={ImageBct} alt="Bộ Công Thươngg Logo" />
                 </div>
               </div>
             </Col>
@@ -103,7 +103,7 @@ const Footer: React.FC<TFooterProps> = () => {
                     rel="noreferrer"
                     className="Footer-download-item"
                   >
-                    <img src={ImageDownloadAppStore} alt="" />
+                    <img src={ImageDownloadAppStore} alt="Shopdi App App Store" />
                   </a>
 
                   <a
@@ -112,7 +112,7 @@ const Footer: React.FC<TFooterProps> = () => {
                     rel="noreferrer"
                     className="Footer-download-item"
                   >
-                    <img src={ImageDownloadGooglePlay} alt="" />
+                    <img src={ImageDownloadGooglePlay} alt="Shopdi App Google Play" />
                   </a>
                 </div>
                 <h4 className="Footer-title">KẾT NỐI VỚI CHÚNG TÔI</h4>

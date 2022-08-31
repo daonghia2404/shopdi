@@ -59,7 +59,7 @@ const Benefit: React.FC<TBenefitProps> = () => {
                 </div>
 
                 <div className="Benefit-list-item-image">
-                  <img src={item.image} alt="" />
+                  <img src={item.image} alt={item.title} />
                 </div>
               </div>
             ))}

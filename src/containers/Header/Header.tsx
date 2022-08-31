@@ -81,10 +81,10 @@ const Header: React.FC<THeaderProps> = () => {
         <div className="Header-top-wrapper-item flex items-center flex items-center">
           Download App
           <a href="https://apps.apple.com/us/app/shopdi/id1625578140" target="_blank" rel="noreferrer">
-            <img src={isMobile ? IconAppleDark : IconApple} alt="" />
+            <img src={isMobile ? IconAppleDark : IconApple} alt="Shopdi App App Store" />
           </a>
           <a href="https://play.google.com/store/apps/details?id=io.shopdi.app" target="_blank" rel="noreferrer">
-            <img src={isMobile ? IconAndroidDark : IconAndroid} alt="" />
+            <img src={isMobile ? IconAndroidDark : IconAndroid} alt="Shopdi App Google Play" />
           </a>
         </div>
       </div>
@@ -103,7 +103,7 @@ const Header: React.FC<THeaderProps> = () => {
         <div className="container">
           <div className="Header-bottom-wrapper flex items-center justify-between">
             <Link to={Paths.Home} className="Header-logo">
-              <img src={Logo} alt="" />
+              <img src={Logo} alt="Shopdi Logo" />
             </Link>
             {isMobile && (
               <div className="Header-icon" onClick={handleToggleVisibleMenu}>

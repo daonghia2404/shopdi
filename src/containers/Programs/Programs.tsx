@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { Col, Row } from 'antd';
 import { useSelector } from 'react-redux';
 
+import ImageCircleBackground from '@/assets/images/image-circle-background.png';
 import ImageProgram from '@/assets/images/image-programs.png';
 import ImageRank1 from '@/assets/images/image-rank-1.png';
 import ImageRank2 from '@/assets/images/image-rank-2.png';
@@ -28,7 +29,10 @@ const Programs: React.FC<TProgramsProps> = () => {
 
   return (
     <section className="Programs" id="Programs">
-      <div className="Programs-background" />
+      <div className="Programs-background">
+        <img src={ImageCircleBackground} alt="" />
+        <img src={ImageCircleBackground} alt="" />
+      </div>
       <div className="container">
         <div className="Programs-wrapper">
           <div className="Programs-header">
@@ -37,15 +41,14 @@ const Programs: React.FC<TProgramsProps> = () => {
             <p className="Programs-description">ĐƯỢC CẬP NHẬT THƯỜNG XUYÊN</p>
           </div>
           <div className="Programs-image">
-            <img src={ImageProgram} alt="" />
+            <img src={ImageProgram} alt="SHOPDI CHIÊU ĐÃI NGƯỜI DÙNG NHIỀU CHƯƠNG TRÌNH HẤP DẪN" />
           </div>
           <div className="Programs-table">
             <div className="Programs-tabs">
               <Row gutter={isMobile ? [8, 8] : [32, 32]} wrap={false}>
                 {dataTabsPrograms.map((item) => (
-                  <Col>
+                  <Col key={item.value}>
                     <div
-                      key={item.value}
                       className={classNames('Programs-tabs-item', { active: item.value === activeKeyTab })}
                       onClick={(): void => handleChangeKeyTab(item.value)}
                     >
@@ -62,9 +65,9 @@ const Programs: React.FC<TProgramsProps> = () => {
             <table>
               <thead>
                 <tr>
-                  <td>Hạng</td>
-                  <td>Người tham gia</td>
-                  <td>Phần thưởng</td>
+                  <th>Hạng</th>
+                  <th>Người tham gia</th>
+                  <th>Phần thưởng</th>
                 </tr>
               </thead>
               <tbody>
@@ -106,11 +109,11 @@ const Programs: React.FC<TProgramsProps> = () => {
                     <Col key={item} span={24} md={{ span: 12 }}>
                       <div className="Programs-news-list-item">
                         <a href="#" className="Programs-news-list-item-image">
-                          <img src="" alt="" />
+                          <img src="" alt="SHOPDI CHÀO BẠN MỚI - TẢI APP NHẬN SHOPDIXU!" />
                         </a>
                         <div className="Programs-news-list-item-info">
                           <h4 className="Programs-news-list-item-title">
-                            <a href="#">SHOPDI CHÀO BẠN MỚI - TẢI APP NHẬN SHOPDIXU! </a>
+                            <a href="#">SHOPDI CHÀO BẠN MỚI - TẢI APP NHẬN SHOPDIXU!</a>
                           </h4>
                           <p className="Programs-news-list-item-description">
                             Số lượng có hạn! Bạn mới gia nhập Shopdi nhận ngay 15k Shopdi Xu (tương đương 15k) khi hoàn
