@@ -16,6 +16,12 @@
     z-index: 1;
   }
 
+  &-btn {
+    @media (max-width: 575px) {
+      justify-content: center;
+    }
+  }
+
   &-wrapper {
     position: relative;
     z-index: 2;

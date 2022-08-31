@@ -1,7 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Col, Row } from 'antd';
+import { Col, Collapse, Row } from 'antd';
 import { Link } from '@reach/router';
+import { useSelector } from 'react-redux';
 
 import LogoLight from '@/assets/images/logo-light.svg';
 import ImageBct from '@/assets/images/image-bct.svg';
@@ -21,11 +22,16 @@ import IconMasterCard from '@/assets/icons/icon-mastercard.svg';
 import IconJcb from '@/assets/icons/icon-jcb.svg';
 
 import { Paths } from '@/pages/routers';
+import { TRootState } from '@/redux/reducers';
 
 import { TFooterProps } from './Footer.types.d';
 import './Footer.scss';
 
+const { Panel } = Collapse;
+
 const Footer: React.FC<TFooterProps> = () => {
+  const isMobile = useSelector((state: TRootState) => state.uiReducer.device.isMobile);
+
   const dataMenuSupport = [
     { link: 'tel: 0818442288', title: 'Hotline và chat trực tuyến (24/7)' },
     { link: 'mailto: support@shopdi.io', title: 'Trung tâm hỗ trợ' },
@@ -70,28 +76,126 @@ const Footer: React.FC<TFooterProps> = () => {
               </div>
             </Col>
             <Col span={24} lg={{ span: 4 }} md={{ span: 12 }}>
-              <div className="Footer-wrapper-item">
-                <h4 className="Footer-title">HỖ TRỢ KHÁCH HÀNG</h4>
-                <ul>
-                  {dataMenuSupport.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.link}>{item.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {isMobile ? (
+                <Collapse
+                  expandIconPosition="right"
+                  accordion
+                  expandIcon={({ isActive }): React.ReactElement => (
+                    <div className="Faq-panel-icon">
+                      {isActive ? (
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M5.6936 12H19.6936"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      ) : (
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M12.6936 5V19"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M5.6936 12H19.6936"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                  )}
+                >
+                  <Panel key={1} header={<h4 className="Footer-title">HỖ TRỢ KHÁCH HÀNG</h4>}>
+                    <ul>
+                      {dataMenuSupport.map((item, index) => (
+                        <li key={index}>
+                          <a href={item.link}>{item.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </Panel>
+                </Collapse>
+              ) : (
+                <div className="Footer-wrapper-item">
+                  <h4 className="Footer-title">HỖ TRỢ KHÁCH HÀNG</h4>
+                  <ul>
+                    {dataMenuSupport.map((item, index) => (
+                      <li key={index}>
+                        <a href={item.link}>{item.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </Col>
             <Col span={24} lg={{ span: 4 }} md={{ span: 12 }}>
-              <div className="Footer-wrapper-item">
-                <h4 className="Footer-title">VỀ SHOPDI</h4>
-                <ul>
-                  {dataMenuShopdi.map((item, index) => (
-                    <li key={index}>
-                      <a href={item.link}>{item.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {isMobile ? (
+                <Collapse
+                  expandIconPosition="right"
+                  accordion
+                  expandIcon={({ isActive }): React.ReactElement => (
+                    <div className="Faq-panel-icon">
+                      {isActive ? (
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M5.6936 12H19.6936"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      ) : (
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M12.6936 5V19"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M5.6936 12H19.6936"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                  )}
+                >
+                  <Panel key={1} header={<h4 className="Footer-title">VỀ SHOPDI</h4>}>
+                    <ul>
+                      {dataMenuShopdi.map((item, index) => (
+                        <li key={index}>
+                          <a href={item.link}>{item.title}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </Panel>
+                </Collapse>
+              ) : (
+                <div className="Footer-wrapper-item">
+                  <h4 className="Footer-title">VỀ SHOPDI</h4>
+                  <ul>
+                    {dataMenuShopdi.map((item, index) => (
+                      <li key={index}>
+                        <a href={item.link}>{item.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </Col>
             <Col span={24} lg={{ span: 6 }} md={{ span: 12 }}>
               <div className="Footer-wrapper-item">

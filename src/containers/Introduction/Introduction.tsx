@@ -25,7 +25,9 @@ const Introduction: React.FC<TIntroductionProps> = () => {
                 Từ ngày 01/09/2022, nhận ngay lợi nhuận không giới hạn khi giới thiệu thành công người dùng tải ứng dụng
                 Shopdi. Giới thiệu bạn bè, nhận thưởng hấp dẫn và lan tỏa giá trị thực đến cộng đồng của bạn
               </p>
-              <Button title="TRỞ THÀNH SHOPDI CONNECTOR NGAY!" />
+              <div className="Introduction-btn flex">
+                <Button title="TRỞ THÀNH SHOPDI CONNECTOR NGAY!" />
+              </div>
             </Col>
             <Col span={24} lg={{ span: 10 }}>
               <div className="Introduction-image">

@@ -8,11 +8,20 @@
   margin: 0;
   overflow: hidden;
 
+  @media (max-width: 575px) {
+    filter: blur(15px);
+  }
+
   .marquee {
     display: block;
     left: 0;
     position: absolute;
     top: 0;
+
+    svg {
+      width: 20vw;
+      min-width: 20rem;
+    }
   }
 
   .marquee2 {
@@ -20,6 +29,11 @@
     left: 0%;
     position: absolute;
     top: 80%;
+
+    svg {
+      width: 25vw;
+      min-width: 25rem;
+    }
   }
 
   svg {

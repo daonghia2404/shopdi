@@ -5,6 +5,43 @@
   background: $ebony-clay;
   overflow: hidden;
 
+  .ant-collapse {
+    border: none;
+    background: transparent;
+
+    .ant-collapse-arrow {
+      position: static !important;
+      transform: none !important;
+      margin-left: 1.6rem !important;
+    }
+
+    .ant-collapse-header {
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: row-reverse !important;
+      justify-content: flex-end !important;
+      align-items: center !important;
+
+      .Footer-title {
+        margin-bottom: 0;
+      }
+    }
+
+    &>.ant-collapse-item {
+      border-bottom: none;
+    }
+
+    .ant-collapse-content {
+      margin-top: 1.6rem;
+      background: transparent;
+      border: none;
+
+      &>.ant-collapse-content-box {
+        padding: 0;
+      }
+    }
+  }
+
   &-logo {
     max-width: 9.5rem;
     margin-bottom: 1.6rem;

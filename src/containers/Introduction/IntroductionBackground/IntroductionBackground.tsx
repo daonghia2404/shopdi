@@ -142,7 +142,7 @@ const IntroductionBackground: React.FC<TIntroductionBackgroundProps> = () => {
   return (
     <div className="IntroductionBackground">
       <div className="marquee">
-        <svg width="20vw" height="100%" viewBox="0 0 738 683" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg height="100%" viewBox="0 0 738 683" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M676.154 222.085H478.537C417.413 222.085 358.813 197.328 316.08 153.598C312.474 149.984 306.343 152.514 306.343 157.574V393.934C306.343 406.222 291.558 412.366 282.903 403.692L94.301 214.857C21.4567 141.852 73.205 17.1668 176.161 17.1668H426.608C467.358 17.1668 506.485 33.4302 535.334 62.3427L681.564 209.074C686.432 213.772 683.006 222.265 676.154 222.085Z"
             stroke="url(#paint0_radial_3924_39985)"
@@ -171,7 +171,7 @@ const IntroductionBackground: React.FC<TIntroductionBackgroundProps> = () => {
         </svg>
       </div>
       <div className="marquee2">
-        <svg width="25vw" height="100%" viewBox="0 0 738 683" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg height="100%" viewBox="0 0 738 683" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M676.154 222.085H478.537C417.413 222.085 358.813 197.328 316.08 153.598C312.474 149.984 306.343 152.514 306.343 157.574V393.934C306.343 406.222 291.558 412.366 282.903 403.692L94.301 214.857C21.4567 141.852 73.205 17.1668 176.161 17.1668H426.608C467.358 17.1668 506.485 33.4302 535.334 62.3427L681.564 209.074C686.432 213.772 683.006 222.265 676.154 222.085Z"
             stroke="url(#paint0_radial_3924_39985)"
