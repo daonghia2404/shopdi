@@ -9,6 +9,24 @@
     border: none;
     background: transparent;
 
+    .ant-collapse-item {
+
+      &.ant-collapse-item-active,
+      &:hover {
+        .Footer-title {
+          color: $candlelight;
+        }
+
+        .Footer-panel {
+          &-icon {
+            svg path {
+              stroke: $candlelight;
+            }
+          }
+        }
+      }
+    }
+
     .ant-collapse-arrow {
       position: static !important;
       transform: none !important;
@@ -42,6 +60,19 @@
     }
   }
 
+  &-panel {
+    &-icon {
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        path {
+          transition: $common-transition;
+        }
+      }
+    }
+  }
+
   &-logo {
     max-width: 9.5rem;
     margin-bottom: 1.6rem;
@@ -56,6 +87,7 @@
     color: $white;
     font-size: 1.4rem;
     font-weight: 700;
+    transition: $common-transition;
     margin-bottom: 1.6rem;
   }
 

@@ -24,12 +24,14 @@
         right: 0;
         top: 40%;
         transform: translate(50%, -50%);
+        min-width: 30rem;
       }
 
       &:nth-child(2) {
         width: 30vw;
         bottom: 0;
         left: 0;
+        min-width: 30rem;
       }
     }
   }
